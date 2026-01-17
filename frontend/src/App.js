@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
 
 // Import components
 import ProtectedRoute from './components/ProtecteRoute';
@@ -24,6 +24,7 @@ function App() {
 
       {/* Routes */}
       <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -31,9 +32,6 @@ function App() {
       <Route element={<ProtectedRoute />}>
   <Route path="/goals" element={<Goals />} />
 </Route>
-
-
-        
       </Routes>
     </>
   );
