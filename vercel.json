@@ -3,7 +3,12 @@
   "buildCommand": "cd frontend && npm ci && npm run build",
   "outputDirectory": "frontend/build",
   "env": {
-    "REACT_APP_API_URL": "https://for-orcin.vercel.app/api"
+    "REACT_APP_API_URL": "https://for-orcin.vercel.app/api",
+    "SECRET_KEY": "super-secret-key-for-wealth-management-demo",
+    "ALGORITHM": "HS256",
+    "DATABASE_URL": "sqlite:///./test.db",
+    "ACCESS_TOKEN_EXPIRE_MINUTES": "30",
+    "REFRESH_TOKEN_EXPIRE_MINUTES": "1440"
   },
   "builds": [
     {
