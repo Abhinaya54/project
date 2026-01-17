@@ -19,14 +19,12 @@
       "dest": "backend/api/index.py"
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/build/$1",
-      "status": 200
+      "src": "/(.+)",
+      "dest": "frontend/build/$1"
     },
     {
       "src": "/",
-      "dest": "frontend/build/index.html",
-      "status": 200
+      "dest": "frontend/build/index.html"
     }
   ]
 }
