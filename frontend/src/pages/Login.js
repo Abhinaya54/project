@@ -82,4 +82,8 @@ const Login = () => {
         <p>Email: sample-email@gmail.com</p>
         <p>Password: sample-password</p>
       </div>
+    </div>
+  );
+};
+
 export default Login;

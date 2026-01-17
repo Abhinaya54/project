@@ -11,3 +11,7 @@ const PrivateRoute = () => {
   }
 
   // Allow access to protected routes
+  return <Outlet />;
+};
+
+export default PrivateRoute;
