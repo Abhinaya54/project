@@ -17,10 +17,12 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/auth/login`, {
-        username: email,
-        password: password,
-      }, {
+      // Create form data for OAuth2 password request
+      const formData = new URLSearchParams();
+      formData.append("username", email);
+      formData.append("password", password);
+
+      const response = await axios.post(`${API_BASE_URL}/auth/login`, formData, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
