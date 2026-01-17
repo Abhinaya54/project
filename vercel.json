@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "public": "public",
   "builds": [
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    },
     {
       "src": "backend/api/index.py",
       "use": "@vercel/python"
@@ -13,7 +16,15 @@
       "dest": "backend/api/index.py"
     },
     {
-      "src": "/(.*)",
+      "src": "/static/(.+)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.+)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/",
       "dest": "/index.html"
     }
   ]
