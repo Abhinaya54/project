@@ -202,8 +202,6 @@ Recommendations
 Reports
 
 Final Demo
-
-
 ## Backend API Usage Examples                    
 
 This section demonstrates how to use the backend APIs step-by-step using Swagger UI. Note: All APIs require authentication.
