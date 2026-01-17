@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 // Import components
-import ProtectedRoute from './Components/ProtectedRoute';
+import ProtectedRoute from './components/ProtecteRoute';
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -12,7 +12,7 @@ import Goals from "./pages/Goals";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       {/* Navigation Links */}
       <nav style={{ display: "flex", gap: "1rem", margin: "1rem" }}>
         <Link to="/login">Login</Link>
@@ -35,7 +35,7 @@ function App() {
 
         
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
