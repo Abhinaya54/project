@@ -1,16 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "cd frontend && npm ci && npm run build",
-  "outputDirectory": "frontend/build",
-  "env": {
-    "REACT_APP_API_URL": "https://for-orcin.vercel.app/api",
-    "SECRET_KEY": "super-secret-key-for-wealth-management-demo",
-    "ALGORITHM": "HS256",
-    "DATABASE_URL": "sqlite:///./test.db",
-    "ACCESS_TOKEN_EXPIRE_MINUTES": "30",
-    "REFRESH_TOKEN_EXPIRE_MINUTES": "1440"
-  },
   "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
     {
       "src": "backend/api/index.py",
       "use": "@vercel/python"
@@ -26,12 +23,13 @@
       "dest": "/static/$1"
     },
     {
-      "src": "/.*\\..*",
-      "dest": "/$0"
+      "src": "/(.*\\..*)",
+      "dest": "/$1"
     },
     {
-      "src": "/.*",
-      "dest": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "status": 200
     }
   ]
 }
