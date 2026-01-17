@@ -1,10 +1,10 @@
 import axios from "axios";
 
+const API_BASE_URL = process.env.REACT_APP_API_URL || "https://for-orcin.vercel.app/api";
+
 export async function login(email, password) {
   try {
-    const response = await axios.post("http://127.0.0.1:8000/auth/login", { email, password });
-    return response.data; // should contain token
-  } catch (error) {
+    const response = await axios.post(`${API_BASE_URL}/auth/login`, { email, password });
     throw error.response?.data?.detail || "Login failed";
   }
 }
