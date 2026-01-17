@@ -22,7 +22,7 @@ const Login = () => {
       formData.append("username", email);
       formData.append("password", password);
 
-      const response = await axios.post(`${API_BASE_URL}/auth/login`, formData, {
+      const response = await axios.post(`${API_BASE_URL}auth/login`, formData, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
