@@ -22,7 +22,15 @@
       "dest": "backend/api/index.py"
     },
     {
-      "src": "/(.*)",
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/.*\\..*",
+      "dest": "/$0"
+    },
+    {
+      "src": "/.*",
       "dest": "/index.html"
     }
   ]
